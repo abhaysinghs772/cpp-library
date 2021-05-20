@@ -14,23 +14,32 @@ using namespace std;
 
 vector<bool>kidsWithCandies(vector<int>& candies, int extra_candies)
 {
-    vector<bool>V;
+    // previous code
 
-    int max = *max_element(candies.begin(), candies.end());
-
-    for (int i = 0; i < candies.size(); i++)
-    {
-        if (candies[i] + extra_candies >= max)
-        {
-            V.push_back(true);
-        }
-        else
-        {
-             V.push_back(false);
-        }
+    // vector<bool>V;
+    // int max = *max_element(candies.begin(), candies.end()); 
+    // for (int i = 0; i < candies.size(); i++)
+    // {
+    //     if (candies[i] + extra_candies >= max)
+    //     {
+    //         V.push_back(true);
+    //     }
+    //     else
+    //     {
+    //          V.push_back(false);
+    //     }
         
-    }
-    return V;
+    // }
+
+    // optimised code
+    vector<bool>answer;
+    int max = candies[0];
+    for(auto &c : candies) if (c > max) max = c; // finding max elemn=ent 
+
+    for(auto &c : candies)
+    c + extra_candies < max ? answer.push_back(false) : answer.push_back(true);
+
+    return answer;
 
 }
 
