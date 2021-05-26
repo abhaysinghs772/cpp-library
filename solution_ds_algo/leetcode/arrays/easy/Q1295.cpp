@@ -47,7 +47,7 @@ int main()
     int arr[n];
     int even = 0;
 
-    // checks the number of digits in an integer
+    // checks the number of digits of an integer
     for (int i = 0; i < n; i++)
     {
         while (nums[i] != 0)
@@ -56,16 +56,15 @@ int main()
             count++;
         }
         arr[i] = count;
-        count =0;
+        count = 0;
     }
 
     // for (int i = 0; i < n; i++)
     // {
     //     cout << arr[i] << " ";
     // }
-    
 
-    to check how many of them are even
+    // to check how many of them are even
     for (int i = 0; i < n; i++)
     {
         if (arr[i] % 2 == 0)
@@ -77,9 +76,23 @@ int main()
         {
             even;
         }
-        
     }
     cout << even;
+
+    //     26-05-2021 short logic
+    
+    //     int findNumbers(vector<int>& nums) {
+    //     int count=0;
+    //     for(auto num : nums)
+    //     {
+    //         string s = to_string(num);
+    //         if(s.size() % 2==0)
+    //         {
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
 
     return 0;
 }
