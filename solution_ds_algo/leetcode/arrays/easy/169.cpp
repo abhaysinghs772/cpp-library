@@ -10,6 +10,20 @@
 // Input: nums = [2,2,1,1,1,2,2]
 // Output: 2
 
+/*************shoter algo **********************/
+// 1.
+// int majorityElement(vector<int>& nums) {
+//     int maxi = nums.size()/2;
+//     sort(nums.begin(),nums.end());
+//     for(int i =0; i< nums.size(); i++)
+//     {
+//         if(nums[i] == nums[i + maxi]){
+//             return nums[i];
+//         }
+//     }
+//     return 0;
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -30,7 +44,7 @@ int majorityElement(vector<int> &nums)
             }
             else
             {
-                diff_ele = nums[i+1];
+                diff_ele = nums[i + 1];
             }
         }
         else
@@ -43,7 +57,7 @@ int majorityElement(vector<int> &nums)
 
 int main()
 {
-    vector<int> nums = {1,2,1,3,3,3,4,5,2,2,2,2};
+    vector<int> nums = {1, 2, 1, 3, 3, 3, 4, 5, 2, 2, 2, 2};
     int ans = majorityElement(nums);
     cout << ans;
 
